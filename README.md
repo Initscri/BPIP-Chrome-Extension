@@ -1,2 +1,2 @@
-# BPIP-Chrome-Extension
+# BPIP Chrome Extension
 BPIP.org chrome extension
