@@ -1,0 +1,18 @@
+{
+  "name": "BPIP.org Chrome Extension",
+  "description": "Adds a BPIP.org button to user profiles on BitcoinTalk.org",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://bitcointalk.org/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "BPIP.org Chrome Extension"
+  },
+  "manifest_version": 2
+}
