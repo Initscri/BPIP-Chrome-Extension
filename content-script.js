@@ -40,19 +40,22 @@ if(nodes.length > 0) {
 			
 			// Find the users id by parent,
 			var userPosterInfoContainer = closestByClass(curNode, 'poster_info');
-			var userLink = userPosterInfoContainer.querySelector('b > a');
-			var userName = userLink.textContent;
 			
-			// Create the link
-			var nodeLink = document.createElement('a');
-			nodeLink.setAttribute('href', 'https://bpip.org/profile.aspx?p=' + userName);
-			nodeLink.setAttribute('target', '_BLANK');
-			
-			// Set the icon of the link.
-			nodeLink.innerHTML = '<img style="width: 16px;height:16px" src="https://bpip.org/images/favicon.ico" />';
-			
-			// Insert the link on the profile.
-			curNode.parentNode.parentNode.insertBefore(nodeLink, curNode.parentNode);
+			if(userPosterInfoContainer != null) {
+				var userLink = userPosterInfoContainer.querySelector('b > a');
+				var userName = userLink.textContent;
+
+				// Create the link
+				var nodeLink = document.createElement('a');
+				nodeLink.setAttribute('href', 'https://bpip.org/profile.aspx?p=' + userName);
+				nodeLink.setAttribute('target', '_BLANK');
+
+				// Set the icon of the link.
+				nodeLink.innerHTML = '<img style="width: 16px;height:16px" src="https://bpip.org/images/favicon.ico" />';
+
+				// Insert the link on the profile.
+				curNode.parentNode.parentNode.insertBefore(nodeLink, curNode.parentNode);
+			}
 		}
 	}
 }
